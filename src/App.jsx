@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { fetchWeather } from './services/weatherApi';
+import { motion } from 'framer-motion';
+import { Cloud } from 'lucide-react';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
