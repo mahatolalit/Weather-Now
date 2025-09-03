@@ -112,7 +112,7 @@ export const getCitySuggestions = async (query) => {
         const data = await response.json();
 
         if (!data.results) return [];
-        return data.resukts.map(result => ({
+        return data.results.map(result => ({
             name: result.name,
             country: result.country,
             admin1: result.admin1,
