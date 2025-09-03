@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { fetchWeather } from './services/weatherApi';
 import { motion } from 'framer-motion';
 import { Cloud } from 'lucide-react';
+import SearchBox from './components/SearchBox';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -50,8 +51,28 @@ const App = () => {
         </motion.header>
 
         {/* Search Section */}
+        <motion.div
+          className="mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <SearchBox onSearch={handleSearch} />
+        </motion.div>
 
         {/* Error Message */}
+        {error && (
+          <motion.div
+            className="mb-6 text-center"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 max-w-md mx-auto">
+              <p className="text-red-600 text-sm font-medium">{error}</p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Weather Card */}
 
