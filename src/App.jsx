@@ -3,6 +3,7 @@ import { fetchWeather } from './services/weatherApi';
 import { motion } from 'framer-motion';
 import { Cloud } from 'lucide-react';
 import SearchBox from './components/SearchBox';
+import WeatherCard from './components/WeatherCard';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -84,6 +85,17 @@ const App = () => {
         </motion.div>
 
         {/* Footer */}
+        <motion.footer
+          className="text-center mt-12 py-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.4 }}
+        >
+          <p className="text-sm text-gray-500">
+            Powered by Open-Meteo API
+          </p>
+        </motion.footer>
+
       </div>
     </div>
   )
