@@ -75,6 +75,13 @@ const App = () => {
         )}
 
         {/* Weather Card */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
+          <WeatherCard weatherData={weatherData} isLoading={loading} />
+        </motion.div>
 
         {/* Footer */}
       </div>
